@@ -18,15 +18,16 @@ import com.example.youtubeapi.R
 import com.example.youtubeapi.databinding.FragmentPlayListBinding
 import com.example.youtubeapi.databinding.ScrollingContent1Binding
 import com.google.android.material.bottomsheet.BottomSheetBehavior
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class PlayListFragment : BaseFragment<FragmentPlayListBinding, PlayListViewModelFragment>(
     FragmentPlayListBinding::inflate,
-    PlayListViewModelFragment::class.java
 ), OnPlaylistClick {
 
 
     private lateinit var bottomSheetBehavior: BottomSheetBehavior<LinearLayout>
     private lateinit var bottomBinding: ScrollingContent1Binding
+    private val viewModel: PlayListViewModelFragment by viewModel()
 
     override fun setupLiveData() {}
 

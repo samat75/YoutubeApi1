@@ -6,10 +6,11 @@ import com.example.loco.ui.base.BaseFragment
 import com.example.model.playlist.Items
 import com.example.youtubeapi.databinding.FragmentDetailBinding
 import com.example.youtubeapi.databinding.ScrollingContent2Binding
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class   DetailFragment : BaseFragment<FragmentDetailBinding, DetailViewModel>(
-    FragmentDetailBinding::inflate,
-    DetailViewModel::class.java
+class   DetailFragment : BaseFragment<FragmentDetailBinding,DetailViewModel>(
+    FragmentDetailBinding::inflate
+
 ), OnPlaylistItemClick {
     private lateinit var bottomBinding: ScrollingContent2Binding
 
@@ -34,4 +35,6 @@ class   DetailFragment : BaseFragment<FragmentDetailBinding, DetailViewModel>(
     override fun onPlaylistItem(videoId: String) {
         Toast.makeText(requireContext(), videoId, Toast.LENGTH_SHORT).show()
     }
+
+    val viewModel: DetailViewModel by viewModel()
 }

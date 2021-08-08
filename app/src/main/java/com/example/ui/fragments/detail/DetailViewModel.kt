@@ -1,6 +1,5 @@
 package com.example.ui.fragments.detail
 import androidx.lifecycle.LiveData
-import com.example.YouTubeApp
 import com.example.loco.network.result.Resource
 import com.example.loco.ui.base.BaseViewModel
 import com.example.model.playlistItems.PlayListItems

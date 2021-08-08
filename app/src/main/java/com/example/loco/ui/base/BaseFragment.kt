@@ -4,17 +4,19 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.ViewModel
 import androidx.viewbinding.ViewBinding
+import com.example.ui.fragments.detail.DetailFragment
+import com.example.ui.fragments.detail.DetailViewModel
+import com.example.ui.fragments.playlist.PlayListViewModelFragment
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
-abstract class BaseFragment<Binding: ViewBinding, VM: BaseViewModel>(private val inflate: (LayoutInflater, ViewGroup?, Boolean) -> Binding, className: Class<VM>): Fragment() {
+abstract class BaseFragment<Binding: ViewBinding, VM: BaseViewModel>(private val inflate: (LayoutInflater, ViewGroup?, Boolean) -> Binding): Fragment() {
 
     private var _binding: Binding? = null
     val binding get() = _binding!!
+ //   val viewModel: ada by viewModel()
 
-    val viewModel: VM by lazy {
-        ViewModelProvider(this).get(className)
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
